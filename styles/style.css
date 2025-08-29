@@ -9,8 +9,340 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--text-weight);
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  position: relative;
+  min-height: 100vh;
 }
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  z-index: -1;
+}
+
+.header__container {
+  align-self: center;
+  width: var(--container-width);
+  margin: 100px auto;
+  background: #fff;
+  border: 2px solid #000;
+  padding-top: 125px;
+  padding-bottom: 125px;
+}
+
+.header__title {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 49px;
+  text-transform: uppercase;
+  color: #000;
+  align-self: center;
+  justify-self: center;
+}
+
+.header__subtitle {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  align-self: center;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: var(--container-width);
+  margin: 0 auto 50px auto;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0 25px 25px 25px;
+  position: relative;
+  z-index: 1;  
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card__image-container {
+  position: relative;
+  margin: 0 -25px;/
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  height: auto; 
+}
+
+.filter-grayscale {
+  filter: grayscale(0.8);
+}
+
+.filter-dropshadow {
+  filter: drop-shadow(4px 4px grey);
+}
+
+.filter-blur {
+  filter: blur(2px);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.filter-contrast {
+  filter: contrast(300%);
+}
+
+.filter-sepia {
+  filter: sepia(200%);
+}
+
+.filter-saturate {
+  filter: saturate(1000%);
+}
+
+.filter-invert {
+  filter: hue-rotate(90deg);
+}
+
+.filter-multiple {
+  filter: contrast(200%) hue-rotate(45deg) saturate(200%) invert(70%);
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 0.5px #fff) or (-webkit-text-stroke: 0.5px #fff)) {
+  .card__label {
+    -webkit-text-stroke: 0.5px #fff;
+    text-stroke: 0.5px #fff;
+  }
+}
+
+.card__label {
+  text-shadow: 
+    -0.5px -0.5px 0 #fff,
+    0.5px -0.5px 0 #fff,
+    -0.5px 0.5px 0 #fff,
+    0.5px 0.5px 0 #fff;
+}
+
+.card__title {
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--title-weight);
+  font-size: 18px;
+  color: #000;
+  padding: 5px 0;
+}
+
+.card__text {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card__icon-button {
+  background: none;
+  border: 2px solid transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: outline 0.3s ease;
+  height: 40px;
+  width: 40px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+}
+
+.card__like-button {
+  background-color: #fff;
+  border: 2px solid black;
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: var(--bg-color);
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;  
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 100px 0;  
+}
+
+.footer__save-button {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  height: auto; 
+  width: auto;
+}
+
+
+@media (min-width: 1440px) {
+  .footer__save-button {
+    width: 335px;
+    height: 55px;
+    flex-direction: row;
+    gap: 8px;
+    padding: 15px 20px;
+  } 
+}
+
+.dialog {
+  border: 2px solid #000;
+  padding: 30px;
+  background: #fff;
+  max-width: 357px;
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 0.75);
+}
+
+.dialog__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dialog__title {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #000;
+  width: 235px;
+}
+
+.dialog__button {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  width: 260px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__like-button,
+.footer__save-button,
+.dialog__button {
+  background-color: var(--bg-color);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__like-button:focus,
+.footer__save-button:focus,
+.dialog__button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__like-button::before,
+.footer__save-button::before,
+.dialog__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.card__like-button:hover::before,
+.footer__save-button:hover::before,
+.dialog__button:hover::before {
+  transform: scaleX(1);
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: var(--bg-color);
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.footer__save-button svg {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  color: var(--bg-color);
+}
+
