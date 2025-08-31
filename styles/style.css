@@ -194,8 +194,13 @@
   align-items: center;
   justify-content: center;
   transition: outline 0.3s ease;
-  height: 40px;
-  width: 40px;
+  width: 45px;
+  height: 45px;
+}
+
+.like-icon {
+  transform: scale(1.6);
+  transform-origin: center;
 }
 
 .card__icon-button:focus {
@@ -207,13 +212,8 @@
 }
 
 .card__like-button {
-  background-color: #fff;
-  border: 2px solid black;
   width: 130px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 40px;  
 }
 
 .button__text {
@@ -229,20 +229,13 @@
 .save-section {
   display: flex;
   justify-content: center;
-  padding: 50px 0 100px 0;
+  padding: 0 0 100px 0;
 }
 
-.footer__save-button {
-  background: #fff;
-  border: 2px solid #000;
+.footer__save-button {  
   padding: 15px 20px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--accent-font);
-  font-size: 14px;
+  flex-direction: column;  
+  gap: 8px;  
   height: auto;
   width: auto;
 }
@@ -252,8 +245,7 @@
     width: 335px;
     height: 55px;
     flex-direction: row;
-    gap: 8px;
-    padding: 15px 20px;
+    gap: 8px;    
   }
 }
 
@@ -291,18 +283,10 @@
   width: 235px;
 }
 
-.dialog__button {
-  background: #fff;
-  border: 2px solid #000;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-family: var(--accent-font);
-  font-size: 14px;
+.dialog__button {  
+  padding: 10px 20px;   
   width: 260px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 40px;  
 }
 
 .button {
@@ -310,6 +294,13 @@
   transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:focus {
@@ -350,4 +341,12 @@
   z-index: 2;
   mix-blend-mode: difference;
   color: var(--bg-color);
+  width: 29px;
+  height: 29px;
+}
+
+@media (min-width: 1440px) {
+  .footer__save-button svg {
+    transform: scale(1.3);
+  }
 }
